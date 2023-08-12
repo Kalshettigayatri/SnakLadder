@@ -7,7 +7,6 @@ namespace SnakeAndLadderGame
         static void Main(string[] args)
         {
             int playerPosition = 0;
-            int diceRollCount = 0;
             bool gameOver = false;
             Random random = new Random();
 
@@ -21,7 +20,6 @@ namespace SnakeAndLadderGame
                 Console.ReadLine();
 
                 int diceRoll = random.Next(1, 7); // Simulate dice roll (1 to 6)
-                diceRollCount++;
                 Console.WriteLine($"You rolled a {diceRoll}");
 
                 int option = random.Next(0, 3); // Simulate option (0: No Play, 1: Ladder, 2: Snake)
@@ -47,12 +45,9 @@ namespace SnakeAndLadderGame
                 // Snake and ladder rules...
                 // (same as previous implementation)
 
-                Console.WriteLine($"Current position: {playerPosition}");
-
                 if (playerPosition == 100)
                 {
                     Console.WriteLine("Congratulations! You reached the top.");
-                    Console.WriteLine($"Total dice rolls to win: {diceRollCount}");
                     gameOver = true;
                 }
             }
